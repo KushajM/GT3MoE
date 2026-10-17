@@ -1,0 +1,168 @@
+{
+  "final": {
+    "gt3_K16": 0.01,
+    "gt3_K32": 0.01,
+    "gt3_K8": 0.03,
+    "rnd_K16": 0.1,
+    "rnd_K32": 0.03,
+    "rnd_K8": 0.01,
+    "swi_K16": 1.0,
+    "swi_K32": 1.0,
+    "swi_K8": 1.0
+  },
+  "grid": [
+    0.01,
+    0.03,
+    0.1,
+    0.3
+  ],
+  "rule": "max mean validation accuracy over seeds 3-5; ties to smaller alpha",
+  "seeds": [
+    3,
+    4,
+    5
+  ],
+  "selected": {
+    "gt3_K16": {
+      "K": 16,
+      "at_grid_edge": true,
+      "balance_alpha": 0.01,
+      "mean_se_pp": 0.271,
+      "method": "gt3",
+      "n_seeds": 3,
+      "rivals_within_1se": 0,
+      "test_acc": 0.649933,
+      "val_acc": 0.649289
+    },
+    "gt3_K32": {
+      "K": 32,
+      "at_grid_edge": true,
+      "balance_alpha": 0.01,
+      "mean_se_pp": 0.248,
+      "method": "gt3",
+      "n_seeds": 3,
+      "rivals_within_1se": 2,
+      "test_acc": 0.6475,
+      "val_acc": 0.645422
+    },
+    "gt3_K8": {
+      "K": 8,
+      "at_grid_edge": false,
+      "balance_alpha": 0.03,
+      "mean_se_pp": 0.365,
+      "method": "gt3",
+      "n_seeds": 3,
+      "rivals_within_1se": 1,
+      "test_acc": 0.6535,
+      "val_acc": 0.649067
+    },
+    "rnd_K16": {
+      "K": 16,
+      "at_grid_edge": false,
+      "balance_alpha": 0.1,
+      "mean_se_pp": 0.136,
+      "method": "rnd",
+      "n_seeds": 3,
+      "rivals_within_1se": 1,
+      "test_acc": 0.650167,
+      "val_acc": 0.648844
+    },
+    "rnd_K32": {
+      "K": 32,
+      "at_grid_edge": false,
+      "balance_alpha": 0.03,
+      "mean_se_pp": 0.193,
+      "method": "rnd",
+      "n_seeds": 3,
+      "rivals_within_1se": 3,
+      "test_acc": 0.654233,
+      "val_acc": 0.6504
+    },
+    "rnd_K8": {
+      "K": 8,
+      "at_grid_edge": true,
+      "balance_alpha": 0.01,
+      "mean_se_pp": 0.257,
+      "method": "rnd",
+      "n_seeds": 3,
+      "rivals_within_1se": 1,
+      "test_acc": 0.653267,
+      "val_acc": 0.652089
+    },
+    "swi_K16": {
+      "K": 16,
+      "at_grid_edge": true,
+      "balance_alpha": 0.01,
+      "mean_se_pp": 0.256,
+      "method": "swi",
+      "n_seeds": 3,
+      "rivals_within_1se": 2,
+      "test_acc": 0.651833,
+      "val_acc": 0.648267
+    },
+    "swi_K32": {
+      "K": 32,
+      "at_grid_edge": true,
+      "balance_alpha": 0.3,
+      "mean_se_pp": 0.135,
+      "method": "swi",
+      "n_seeds": 3,
+      "rivals_within_1se": 0,
+      "test_acc": 0.6405,
+      "val_acc": 0.638356
+    },
+    "swi_K8": {
+      "K": 8,
+      "at_grid_edge": false,
+      "balance_alpha": 0.03,
+      "mean_se_pp": 0.23,
+      "method": "swi",
+      "n_seeds": 3,
+      "rivals_within_1se": 3,
+      "test_acc": 0.6549,
+      "val_acc": 0.652267
+    }
+  },
+  "stage1b": {
+    "job": "gt3moe-v2-U-tune1b-20261005-213613",
+    "rule": "PREREGISTRATION.md A1.3: a new alpha replaces the within-job anchor only if its mean validation accuracy over seeds 3-5 is higher; ties to the smaller alpha. alpha=0 is a diagnostic and is never selected.",
+    "selections": {
+      "swi_K16": {
+        "anchor_alpha": 0.01,
+        "balance_alpha": 1.0,
+        "diagnostic_alpha0_mean_val_acc": null,
+        "mean_val_acc": {
+          "0.001": 0.649378,
+          "0.01": 0.646311,
+          "1.0": 0.650133
+        },
+        "n_seeds": 3,
+        "replaced_anchor": true
+      },
+      "swi_K32": {
+        "anchor_alpha": 0.3,
+        "balance_alpha": 1.0,
+        "diagnostic_alpha0_mean_val_acc": 0.658756,
+        "mean_val_acc": {
+          "0.001": 0.635422,
+          "0.3": 0.632444,
+          "1.0": 0.6372
+        },
+        "n_seeds": 3,
+        "replaced_anchor": true
+      },
+      "swi_K8": {
+        "anchor_alpha": 0.03,
+        "balance_alpha": 1.0,
+        "diagnostic_alpha0_mean_val_acc": 0.655156,
+        "mean_val_acc": {
+          "0.001": 0.652267,
+          "0.03": 0.649022,
+          "1.0": 0.653822
+        },
+        "n_seeds": 3,
+        "replaced_anchor": true
+      }
+    }
+  }
+}

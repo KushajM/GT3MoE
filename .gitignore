@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# local runs
+/data/
+/outputs/
+/ckpt/
+*.npz
+!analysis/data/_costtrace/*.npz
+
+# regenerated paper artifacts
+/paper_artifacts/

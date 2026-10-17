@@ -1,0 +1,17 @@
+# Training: the versions recorded in every result file were torch 2.5.1+cu124, torchvision 0.20.1,
+# numpy 1.26.4, scipy 1.16.0 and scikit-learn 1.7.1 (the SageMaker PyTorch 2.5.1 / py311 container).
+# Local CPU smoke tests: torch 2.5.1+cpu / torchvision 0.20.1 from
+#   --index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+torchvision==0.20.1
+numpy>=1.26,<2.3
+scipy>=1.11
+scikit-learn>=1.3
+Pillow>=10.0
+pyarrow>=14.0        # Mini-ImageNet parquet shards
+
+# Paper tables and figures (analysis/)
+matplotlib>=3.8
+
+# Launching on SageMaker (sagemaker/launch_boto3.py) only
+boto3>=1.34
